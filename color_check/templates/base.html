@@ -1,0 +1,31 @@
+<!-- This html template will start off all of your other html files/pages -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <body>
+    <!-- the page title will be a varible passed to the render_template() function for each page separately-->
+    <title> {{ page_title }}</title>
+  	<meta charset="utf-8"/>
+    <!-- include the css from the file static/style.css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  
+    <!-- this headline will appear on all pages. -->
+    <header>
+    </header>
+
+    <div style="width: 100%; background-color: blue; height: 200px; ">
+    </div>
+    
+    <p style="text-align:center;"> Crazy Color Check Website </p> 
+
+    <main>
+      {% block content%}
+      {% endblock %}
+    </main>
+
+   <footer>
+      <h3> By adrien </h3>
+    </footer>
+    </body>
+  </head>
