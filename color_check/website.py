@@ -23,7 +23,10 @@ def show_color():
     # - create a log.txt file which records (logs) the user requests. 
 
     user_submitted_string = request.form["color"]
-    color_hex_code = get_color_code(user_submitted_string)
+    try:
+        color_hex_code = get_color_code(user_submitted_string)
+    except:
+        return render_template('error.html', page_title="thisisanerror")
 
     return render_template('color.html', page_title="Show Color",
                            thecolor=color_hex_code)

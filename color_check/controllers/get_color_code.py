@@ -18,8 +18,7 @@ def get_color_code(color_name):
     
         if color_name in data_dico:
             hex_code = data_dico[color_name]
-        return hex_code    
+            return hex_code
+        else:
+            raise Exception("We didn't find this color, please try again")
         
-        
-# else:
-#      raise Exception
