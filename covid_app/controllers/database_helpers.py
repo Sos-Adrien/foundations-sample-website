@@ -33,10 +33,9 @@ def close_conection_to_database(db_connection):
 # This function will change either the structure or contents of your database.
 # This expects SQL commands like "CREATE" or "INSERT"
 def change_database(db_connection, db_cursor, sql_command):
-    try:
-        db_cursor.execute(sql_command)
-    except sqlite3.DatabaseError:
-        print("tried to execute the folllwing SQL, but failed:", sql_command)
+    
+    db_cursor.execute(sql_command)
+    
 
     # commit changes - like with git.
     db_connection.commit()
@@ -48,11 +47,9 @@ def change_database(db_connection, db_cursor, sql_command):
 # the intent here is to use this for seeing what is inside the database.
 # SQL commands like "SELECT" are expected here
 def query_database(db_cursor, sql_query):
-    try:
-        db_cursor.execute(sql_query)
-    except sqlite3.DatabaseError:
-        print("tried to execute the folllwing SQL, but failed:", sql_query)
-
+    
+    db_cursor.execute(sql_query)
+    
     # list of tuples, where each tuple represents a row in the database
     query_response = db_cursor.fetchall()
 
